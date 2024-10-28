@@ -15,6 +15,13 @@ def home(request):
     }
     return render(request,'core/index.html', data)
 
+def formulario(request):
+    titulo = "Formulario"
+    data = {
+        "titulo": titulo
+    }
+    return render(request,'core/formulario.html', data)
+
 def catalogo(request):
     productos = Product.objects.all()
     return render(request,'core/catalogo.html', {'productos' : productos})

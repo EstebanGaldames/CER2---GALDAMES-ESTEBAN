@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+
+
+{% block main %}
+
+
+
+     <p class = "textSolicitud" style="text-align: center;">Solicitud de Reciclaje</p>
+      <section class="form-register">
+        <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+        <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+        <input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingrese la dirección de recolección">
+        <input class="controls" type="number" name="cantidadRes" id="cantidadRes" placeholder="Ingrese la cantidad de residuos" min = "1">
+        <textarea class="controls largo" type="text" name = "Comentarios" id = "Comentarios" rows="5" cols="50" placeholder="Comentario adicional (opcional)"></textarea>
+
+        <!-- Choice box (select) para elegir el tipo de material -->
+        <select id="material" class="controls">
+          <option value="">Seleccione el tipo de Residuo</option>
+          <option value="plastico">Plástico</option>
+          <option value="papel">Papel</option>
+          <option value="vidrio">Vidrio</option>
+          <option value="metales">Metales</option>
+          <option value="electronicos">Electrónicos</option>
+        </select>
+
+        <!-- Secciones ocultas para cada opción -->
+        <div id="plastico" class="material-options" style="display: none;">
+          <select id="tipoPlastico" class = "controls">
+            <option value="PET">Botellas</option>
+            <option value="HDPE">Envases</option>
+            <option value="PVC">Bolsas</option>
+          </select>
+        </div>
+
+        <div id="papel" class="material-options" style="display: none;">
+          <select id="tipoPapel" class = "controls">
+            <option value="carton">Cartón</option>
+            <option value="papelPeriodico">Periódico</option>
+            <option value="papelBlanco">Papel de oficina</option>
+          </select>
+        </div>
+
+        <div id="vidrio" class="material-options" style="display: none;">
+          <select id="tipoVidrio" class = "controls">
+            <option value="transparente">Botellas</option>
+            <option value="verde">Frascos</option>
+            <option value="marron">Cristalería</option>
+          </select>
+        </div>
+
+        <div id="metales" class="material-options" style="display: none;">
+          <select id="tipoMetal" class = "controls">
+            <option value="aluminio">Cables</option>
+            <option value="acero">Latas</option>
+            <option value="cobre">Electrodomésticos pequeños</option>
+          </select>
+        </div>
+
+        <div id="electronicos" class="material-options" style="display: none;">
+          <select id="tipoElectronico" class = "controls">
+            <option value="computadora">Batería</option>
+            <option value="telefono">Componentes de computadoras</option>
+            <option value="televisor">Teléfonos móviles</option>
+          </select>
+        </div>    
+        <button id="btn-enviar" class="btn btn-enviar">Enviar Solicitud</button>
+        <div id="error-messages" style="color: red;"></div>  
+      </section>
+    
+<!--LINKS para uso de bootstrap.-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="js/bootstrap.js"></script> 
+<script src="js/scripts.js"></script>  
+
+{% endblock %}

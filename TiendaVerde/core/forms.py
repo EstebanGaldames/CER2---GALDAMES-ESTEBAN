@@ -7,10 +7,14 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'email', 'password1', 'password2'] #Pedir solo el nombre, email y contraseñas
 
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if not email:
             raise forms.ValidationError("El email es obligatorio.")
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError("Este email ya está registrado. Usa uno diferente.")
+
         return email
 
     def clean_password2(self):

@@ -2,7 +2,7 @@
 
 {% block main %}
 
-<div class = "Carrito " style="margin-top: 1.4vw;">
+<div class = "Carrito ">
     <a href="{% url 'carrito' %}" class="btn btn-primary" id = "botonCarrito"><i class="bi bi-cart fs-3" id = "cartIcon"></i> <span style="margin: 0 0 0 0.4vw; width: 10vw;">
       
       {% if total_cantidad > 0 %}
@@ -10,14 +10,13 @@
       {% endif %}
 
     </span></a>
-
 </div>
  
 
   <!-- Catálogo de productos (CARDS)-->  
-  <p class = "textCatálogo" style="margin-top: 0.2vw ;margin-left: 1vw; position: relative;">Catálogo de Productos</p>
+  <p class = "textCatálogo" style="margin-top: 0.9vw ;margin-left: 1vw; margin-bottom: 0; position: relative;">Catálogo de Productos</p>
 
-  <div class = "productos" style="margin-top: 0.8vw;"> 
+  <div class = "productos"> 
     <div class="row row-cols-2 row-cols-md-3 g-2" id = "productRows" style="padding: 0 0 0 0; margin: 0 0 0 0;">
         {% for producto in productos %}
         <div class="col">
