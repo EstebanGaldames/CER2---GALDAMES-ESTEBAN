@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+
+{% load crispy_forms_tags %}
+
+<div class = "container" style="margin-top: 7vw;">
+
+    <form action="" method="post">
+
+        {% csrf_token %}
+
+        <div class="card mx-auto" style="width: 30rem;">
+            <div class="card-body">
+              <h5 class="card-title" style="margin-bottom: 1vw;">Ingrese sus datos</h5>
+              {{ form | crispy }}
+              <button type="submit" class="btn" style="margin-top: 1vw; color: white;">Iniciar Sesion</button>
+              <p style="margin-top: 1.4vw; font-size: 14px;">¿No tienes una cuenta? <a href="{% url 'register' %}">Registrate</a></p>
+            </div>
+          </div>
+    
+    </form>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+
+
+<!-- Carrusel de imágenes (Bootstrap).-->
+<div id = "destacados">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://www.verdementa.es/media/products/b/o/bolsa-non-woven-resistente-7kg-marron.jpg" class="d-block w-100" alt="Bolsa ecologica">
+          <div class="carousel-caption d-none d-md-block" id = "Descripcion">
+            <h5 class = "producTitulo">Bolsa Ecológica</h5>
+            <p class = "producDescp">Más vendido</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://ceroplas.cl/cdn/shop/products/vasocompostablemarron_2048x2048.jpg?v=1660166020">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class = "producTitulo" >Vasos</h5>
+            <p class = "producDescp">Más vendido</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://static.vecteezy.com/system/resources/previews/006/663/121/non_2x/wooden-cutlery-single-use-eco-friendly-isolated-on-white-background-with-clipping-path-free-photo.jpg" class="d-block w-100" alt="Destacado3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class = "producTitulo">Cubiertos</h5>
+            <p class = "producDescp">Más vendido</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <p class = "infTitulo"> ¿Quiénes somos?</p>
+  <p class = "infTienda p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatum soluta laborum consequuntur alias earum repellendus quibusdam. Praesentium aspernatur in impedit neque nam explicabo sequi, molestias illum dolorem rerum voluptatum facere libero ex quisquam velit deleniti? Quae id amet natus ratione dignissimos reiciendis libero ex fugit? Totam vero, assumenda omnis nam placeat, nemo deleniti temporibus sequi fugiat, modi tempore. Assumenda, dolor quibusdam ducimus quam, quod explicabo vel perspiciatis, sit non repellat cumque incidunt iure quisquam deserunt? Reiciendis quidem eos nihil in fugit et reprehenderit debitis obcaecati? Non, odit eaque dolore adipisci distinctio consectetur, dolor, vel velit molestias ex sunt fuga.</p>
+
+
+{% endblock %}

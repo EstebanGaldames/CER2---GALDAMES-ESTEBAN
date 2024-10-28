@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+
+<div class="alert alert-primary mx-auto" role="alert" style=" margin: 2vw 0 0 0; width: 60vw; display: block;">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="row" colspan="3" class="text-center">CARRITO</th>
+        </tr>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% if request.session.carrito.items %}
+      {% for key, value in request.session.carrito.items %}
+        <tr>
+          <td>{{value.nombre}}</td>
+          <td>$ {{value.acumulado}}</td>
+          <td>{{value.cantidad}}
+            <a href="{% url 'Add' value.producto_id %}" class="badge btn btn-dark badge-dark" style="margin: 0 0 0 0.7vw;">+</a>
+            <a href="{% url 'Sub' value.producto_id %}" class="badge btn btn-dark badge-dark" style="margin: 0 0 0 0.7vw;">-</a>
+          </td>
+        </tr>
+      {% endfor %}
+      {% else %}
+      <tr>
+          <td colspan="3">
+              <div class="alert alert-danger text-center"> Sin Productos </div>
+          </td>
+      </tr>
+      {% endif %}
+        <tr>
+          <th scope="row">Total:</th>
+          <td colspan="2">$ {{total_carrito}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    </div>
+    <div class="row text-center">
+        <div class="col-6"><a href="{% url 'CLS' %}" class="btn btn-danger" style="margin: 1vw 0 0 0;">Limpiar</a></div>
+        <div class="col-6"><a href="{% url 'pedidos' %}" class="btn btn-success" style="margin: 1vw 0 0 0;">Pagar</a></div>
+</div>
+{% endblock %}

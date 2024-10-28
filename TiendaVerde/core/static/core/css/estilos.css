@@ -1,0 +1,236 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    padding: 2vw 0 0 0; /*Hago que el body tenga un espacio para la barra de navegación*/
+    margin: 1.5vw 0 0 0;
+}
+
+.container-fluid{
+    color: #55a630;
+    box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.1); /*Le agrego una línea con sombra a la barra de navegación.*/
+}
+
+.navbar{
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar-nav{
+    margin: 0 0 0 4vw;
+}
+
+.nav-link{
+    color: #55a630 ;
+}
+
+.btnsesion{
+
+   float: right; 
+
+}
+
+#destacados{
+    /*Hago que el carrusel se ubique al centro, para que no ocupe todo el ancho.*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.textDestacado{
+    margin-top: 3vw;
+    font-size: 30px;
+    text-align: center;
+    color: #156135;
+}
+
+.carousel{
+    width: 60%;
+}
+
+/*Hago que las flechas para cambiar de imagen se hagan mas visibles.*/
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20%; /* Hace las flechas más visibles */
+}
+
+.carousel-inner{
+    width: 100%;
+    height: 40vw;
+}
+
+.carousel-item{
+    width: 100%;
+    height: 40vw;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 40vw;
+}
+
+.carousel-caption{
+    font-size: 20px;
+    color: black;
+}
+
+/*Nombre de los productos mas vendidos.*/
+.producTitulo{
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.producDescp{
+    font-size: 21px;
+    color: solid black;
+    font-family:"Montserrat", sans-serif;
+}
+
+/*Bloque con la descripción de la tienda.*/
+.infTienda{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    font-size: 22px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: 2px solid #55a630; /*El texto va a estar rodeado de un borde.*/
+    justify-content: center;
+    box-sizing: border-box;
+    display: inline-block; /*Esto permite que el ancho del elemento se ajuste al contenido, en lugar de ocupar todo el ancho disponible como un bloque hace que el borde siga el tamaño del texto.*/
+}
+
+.infTitulo{
+    margin-top: 6vw;
+    font-size: 30px;
+    text-align: center;
+    color: #55a630;
+}
+
+/* CATALOGO */
+
+
+.textCatálogo{
+    margin: 5vw 0 0 0;
+    padding: 0 0 0 10.5vw;
+    font-size: 30px;
+    color: #156135;
+    text-align: center;
+}
+
+.productos{
+    margin: 0 0 0 0;
+    padding: 0 0 0 10vw;
+    width: 100%;
+    height: 60vw;
+    display: flex;
+    display: inline-block; 
+    flex-direction: row; /* Pongo las cards en horizontal */
+    flex-wrap: wrap;     /*Permiten que las cards se junten en filas*/
+    box-sizing: border-box;
+    align-content: center;
+    justify-content: center;
+}
+
+.card{
+    width: 17vw;
+    margin: 3vw 0 4vw 0;
+    box-sizing: border-box;
+    max-width: 18rem;
+}
+
+.card-title{
+    margin: 0 0 0.3vw;
+    display: inline-block;
+    font-size: 20px;  
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.Carrito{
+    width: 7vw;
+    height: 2vw;
+    float: right;
+    margin: 4vw 3vw 0 0;
+    text-align: center;
+}
+
+/*Id del boton de añadir al carrito, para que se quede dentro de la card*/
+#addProduct{
+    display: inline-block;
+}
+
+.btn{
+    background-color: #2fa216;
+    border: #2fa216;
+}
+
+/*Color cuando ponen el cursor sonbre el botón*/
+.btn:hover{
+    background-color: #50b620;
+    border: #50b620;
+}
+
+/*Hace que el icono del carrito lo tome como un boton.*/
+#botonCarrito{
+    width: 2.9vw;
+    height: 2.8vw;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    align-content: center;
+    justify-content: center;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: -10px; 
+    background-color: red; 
+    color: white;
+    border-radius: 50%; 
+    padding: 2px 6px; 
+    font-size: 12px; 
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Cuando ponen el cursor sobre el icono, se ilumina*/
+#botonCarrito:hover{
+    color: rgba(165, 162, 162, 0.923);
+}
+
+.cartIcon{
+    font-weight: bold ;
+    font-size: 60px;
+}
+
+/* INICIO SESION USUARIO */
+
+.form-register{
+    width: 400px;
+    border: 20px  ;
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-family:"Montserrat", sans-serif; ;
+    color: white;
+}
+
+.dsesion{
+
+    margin: 3vw 0 0 0;
+
+}

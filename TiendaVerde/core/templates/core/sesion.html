@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Nombre de Usuario">
+    <input type="password" name="password" placeholder="Constraseña">
+    <button type="submit">Iniciar Sesion</button>
+
+</form>
+
+{% endblock %}
