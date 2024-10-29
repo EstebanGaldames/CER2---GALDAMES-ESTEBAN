@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 #Login y Logout.
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-
+from django.contrib.auth import authenticate, login
+#Modelos y carrito.
 from core.models import Product, Pedido
 from core.carrito import Carrito
+#Form del usuario.
 from .forms import CustomUserCreationForm
-from django.contrib.auth import authenticate, login
+
 
 # Create your views here.
 def home(request):
@@ -87,9 +89,11 @@ def register(request):
     return render(request, 'registration/register.html', data)
 
 def envio_pedido(request):
-    
+
+    carro = request.session.get('carrito', {})
+
     #Si el carrito no está vacío.
-    if Carrito:
+    if carro:
         #Obtengo los datos del carrito.
         carrito = request.session.get('carrito', {})
         correo_usuario = request.user.email # Obtengo el usuario logeado.
