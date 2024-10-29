@@ -3,9 +3,27 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class CustomUserCreationForm(UserCreationForm):
+    first_name = forms.CharField(label='Nombre', required=True)
+    last_name  = forms.CharField(label='Apellido', required=True)
+    password1  = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password2  = forms.CharField(label='Confirmar Contraseña', widget=forms.PasswordInput)
+    email      = forms.EmailField(label='Correo Electrónico', required=True)
+
     class Meta:
-        model = User
+        model  = User
         fields = ['first_name', 'last_name', 'email', 'password1', 'password2'] #Pedir solo el nombre, email y contraseñas
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if not first_name:
+            raise forms.ValidationError("El nombre es obligatorio.")
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if not last_name:
+            raise forms.ValidationError("El apellido es obligatorio.")
+        return last_name
 
 
     def clean_email(self):
