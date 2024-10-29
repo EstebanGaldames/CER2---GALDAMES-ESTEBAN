@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core',
 ]
 
+# Crispy forms.
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
@@ -127,7 +128,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-#Imagenes a productos.
+#Imagenes en los productos.
 import os
 
 MEDIA_URL = 'core/static/core/media/'

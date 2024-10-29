@@ -5,19 +5,18 @@ from .models import Product, Pedido
 admin.site.register(Product)
 
 class PedidoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'cantidad', 'precio_parcial', 'estado', 'correo')
-    list_filter = ('estado',)  # Filtro por estado
+    lista = ('nombre', 'cantidad', 'precio_parcial', 'estado', 'correo')
+    filtroLista = ('estado')  # Filtro por estado
 
-    def get_readonly_fields(self, request, obj=None):
-        # Si el usuario no es superusuario, todos los campos excepto 'estado' serán de solo lectura
+    def getCamposVendedor(self, request, obj=None):
+        # Si el usuario no es superusuario, solo es estado se podrá modificar.
         if not request.user.is_superuser:
             return ('nombre', 'cantidad', 'precio_parcial', 'correo')
-        return ()  # Para superusuarios, permite la edición completa
+        return ()  # Para superusuarios puede modificar todo.
 
-    def get_fields(self, request, obj=None):
-        # Define el orden y selección de campos que se mostrarán
+    def getCampos(self, request, obj=None):
         if not request.user.is_superuser:
-            return ('estado',)  # Solo permite 'estado' para usuarios normales
+            return ('estado',)  # Solo permite estado para usuarios vendedores.
         return ('nombre', 'cantidad', 'precio_parcial', 'estado', 'correo')
     
 admin.site.register(Pedido, PedidoAdmin)    

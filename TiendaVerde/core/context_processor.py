@@ -1,3 +1,4 @@
+#Función que tiene el precio total de los productos en el carrito.
 def total_carrito(request):
     total = 0
     if request.user.is_authenticated:
@@ -6,6 +7,7 @@ def total_carrito(request):
                 total += int(value["acumulado"])
     return {"total_carrito" : total}   
 
+#Función que tiene la cantidad de productos en el carrito.
 def total_cantidad(request):
     total = 0
     if request.user.is_authenticated:

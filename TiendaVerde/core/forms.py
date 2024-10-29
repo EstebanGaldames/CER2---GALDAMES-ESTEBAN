@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class CustomUserCreationForm(UserCreationForm):
+    #Escribo los campos para que diga una alerta de que son obligatorios.
     first_name = forms.CharField(label='Nombre', required=True)
     last_name  = forms.CharField(label='Apellido', required=True)
     password1  = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
