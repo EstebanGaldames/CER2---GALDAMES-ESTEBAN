@@ -48,6 +48,7 @@ class Carrito:
         if id in self.carrito.keys():
             self.carrito[id]["cantidad"]  -= 1
             self.carrito[id]["acumulado"] -= Product.precio
+            #Si la cantidad es menor a 0, lo borro del carrito.
             if self.carrito[id]["cantidad"] <= 0: self.eliminar(Product)
             self.guardar_carrito()
 
